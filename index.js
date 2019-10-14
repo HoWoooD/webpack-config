@@ -1,3 +1,5 @@
+require('./styles.scss');
+
 class Car {
 	manufacture(car) {
 		document.write(`I have a ${car}`)
