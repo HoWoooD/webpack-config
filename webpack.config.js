@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
 let config = {
 
@@ -29,9 +30,6 @@ let config = {
 	plugins: [
 		new ExtractTextWebpackPlugin('styles.css')
 	],
-	optimization: {
-		minimizer: [ new UglifyJsPlugin() ]
-	},
 	devServer: {
 		contentBase: path.resolve(__dirname, './public'), //A directory or URL to serve HTML content from
 		historyApiFallback: true, // fallback to /index.html for Single Page Applications.
@@ -42,3 +40,9 @@ let config = {
 }
 
 module.exports = config;
+
+if (process.env.NODE_ENV === 'production') {
+	module.exports.plugins.push(
+		new OptimizeCSSAssets
+	);
+}
