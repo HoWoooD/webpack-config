@@ -1,4 +1,4 @@
-# Learn confige webpack
+# Learning config webpack
 This repository created to learn webpack configuration
 For Run install Node and run
 ```webpack```
