@@ -5,7 +5,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
 
 let config = {
-
 	entry: './src/index.js',
 	output: {
 		path: path.resolve(__dirname, './public'),
@@ -71,7 +70,7 @@ let config = {
 		// open: true, //open default browser while launching
 	},
 	devtool: 'eval-source-map' //enable devtool for better debugging experience
-}
+};
 
 module.exports = config;
 
